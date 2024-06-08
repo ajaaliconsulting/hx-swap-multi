@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Multi swap example, Loading data by column</title>
+    <script src="https://unpkg.com/htmx.org@1.9.12"
+        integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2"
+        crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/htmx.org@1.9.12/dist/ext/multi-swap.js"></script>
+</head>
+
+<body hx-ext="multi-swap">
+    <table border="1">
+        <thead>
+            <tr>
+                <th hx-get="/get-column1-data" hx-trigger="load" hx-swap="multi:#row1-col1,#row2-col1,#row3-col1">Column
+                    1</th>
+                <th hx-get="/get-column2-data" hx-trigger="load" hx-swap="multi:#row1-col2,#row2-col2,#row3-col2">Column
+                    2</th>
+                <th hx-get="/get-column3-data" hx-trigger="load" hx-swap="multi:#row1-col3,#row2-col3,#row3-col3">Column
+                    3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="row1-col1"></td>
+                <td id="row1-col2"></td>
+                <td id="row1-col3"></td>
+            </tr>
+            <tr>
+                <td id="row2-col1"></td>
+                <td id="row2-col2"></td>
+                <td id="row2-col3"></td>
+            </tr>
+            <tr>
+                <td id="row3-col1"></td>
+                <td id="row3-col2"></td>
+                <td id="row3-col3"></td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>
